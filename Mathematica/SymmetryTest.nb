@@ -1,0 +1,864 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     29245,        856]
+NotebookOptionsPosition[     28238,        819]
+NotebookOutlinePosition[     28608,        835]
+CellTagsIndexPosition[     28565,        832]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " statistic"
+}], "Title",
+ CellChangeTimes->{
+  3.671056048253888*^9, {3.6710561315934553`*^9, 3.671056143883411*^9}}],
+
+Cell[TextData[{
+ "For testing the null hypothesis of symmetry about zero, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["H", "0"], ":", " ", 
+     RowBox[{"F", "(", 
+      RowBox[{"0", "-", "x"}], ")"}]}], " ", "=", " ", 
+    RowBox[{"1", "-", 
+     RowBox[{"F", "(", 
+      RowBox[{"x", "-", "0"}], ")"}]}]}], TraditionalForm]]],
+ ", for all x > 0 based on a sample ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "1"], ",", "...", ",", " ", 
+    SubscriptBox["X", "n"]}], TraditionalForm]]],
+ " of independent and identically distributed random variables with common \
+absolutely continuous distribution function F, Einmahl and McKeague derived \
+as a test statistic the quantity:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "n"], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+       RowBox[{"log", " ", 
+        RowBox[{"H", "(", "x", ")"}], 
+        RowBox[{"\[DifferentialD]", 
+         RowBox[{
+          SubscriptBox["G", "n"], "(", "x", ")"}]}]}]}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["2", "n"]}], 
+      RowBox[{
+       SubsuperscriptBox["\[Sum]", 
+        RowBox[{"i", "=", "1"}], "n"], 
+       RowBox[{"log", " ", 
+        RowBox[{"H", "(", 
+         RowBox[{"|", 
+          SubscriptBox["X", "i"], "|"}], ")"}]}]}]}]}]}], TraditionalForm]]],
+ ".\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["G", "n"], TraditionalForm]]],
+ " denotes here the empirical distribution function of the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[LeftBracketingBar]", 
+    SubscriptBox["X", "i"], "\[RightBracketingBar]"}], TraditionalForm]]],
+ " and:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"log", " ", 
+     RowBox[{"H", "(", "x", ")"}]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"n", " ", 
+      RowBox[{
+       SubscriptBox["F", "n"], "(", 
+       RowBox[{"-", "x"}], ")"}], " ", "log", " ", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"-", "x"}], ")"}], " ", "+", " ", "1", " ", "-", 
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"x", "-"}], ")"}]}], 
+       RowBox[{"2", " ", 
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"-", "x"}], ")"}]}]]}], "+", 
+     RowBox[{
+      RowBox[{"n", "(", 
+       RowBox[{"1", "-", 
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"x", "-"}], ")"}]}], ")"}], " ", "log", " ", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"-", "x"}], ")"}], "+", "1", "-", 
+        RowBox[{
+         SubscriptBox["F", "n"], "(", 
+         RowBox[{"x", "-"}], ")"}]}], 
+       RowBox[{"2", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SubscriptBox["F", "n"], "(", 
+           RowBox[{"x", "-"}], ")"}]}], ")"}]}]]}]}]}], TraditionalForm]]],
+ ",\n\nwhere notations means ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["F", "n"], "(", 
+     RowBox[{"-", "x"}], ")"}], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["F", "n"], "(", 
+     RowBox[{"0", "-", "x"}], ")"}]}], TraditionalForm]]],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Prob", "(", 
+    RowBox[{"X", " ", "\[LessEqual]", " ", 
+     RowBox[{"-", 
+      RowBox[{"\[LeftBracketingBar]", "x", "\[RightBracketingBar]"}]}]}], 
+    ")"}], TraditionalForm]]],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["F", "n"], "(", 
+     RowBox[{"x", "-"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["F", "n"], "(", 
+      RowBox[{"x", "-", "0"}], ")"}], " ", "=", " ", 
+     RowBox[{"Prob", "(", 
+      RowBox[{"X", " ", "<", 
+       RowBox[{"\[LeftBracketingBar]", "x", "\[RightBracketingBar]"}]}], 
+      ")"}]}]}], TraditionalForm]]],
+ ".\n\nA sample of an implementation of this test statistic would be the \
+following:"
+}], "Text",
+ CellChangeTimes->{{3.67105615149058*^9, 3.67105658254149*^9}, {
+  3.671056623063878*^9, 3.671056720255554*^9}, {3.671056850606439*^9, 
+  3.6710568552547817`*^9}, {3.671121719562724*^9, 3.671121747602606*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", "Y_", "]"}], ":=", " ", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "n", ",", "d", ",", "x", ",", "X", ",", "F1", ",", "F2", ",", "logh", 
+       ",", "logleft", ",", "logright"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"n", " ", "=", " ", 
+       RowBox[{"Length", "[", "Y", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"d", " ", "=", " ", 
+       RowBox[{"EmpiricalDistribution", "[", "Y", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"F1", "[", "x_", "]"}], " ", ":=", " ", 
+       RowBox[{"Probability", "[", 
+        RowBox[{
+         RowBox[{"X", "<", 
+          RowBox[{"Abs", "[", "x", "]"}]}], ",", 
+         RowBox[{"X", "\[Distributed]", "d"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"F2", "[", "x_", "]"}], " ", ":=", " ", 
+       RowBox[{"Probability", "[", 
+        RowBox[{
+         RowBox[{"X", "\[LessEqual]", 
+          RowBox[{"-", 
+           RowBox[{"Abs", "[", "x", "]"}]}]}], ",", 
+         RowBox[{"X", "\[Distributed]", "d"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"logleft", "[", "x_", "]"}], ":=", " ", 
+       RowBox[{"Piecewise", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"n", " ", 
+             RowBox[{"F2", "[", 
+              RowBox[{"-", "x"}], "]"}], " ", 
+             RowBox[{"Log", "[", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"F2", "[", 
+                 RowBox[{"-", "x"}], "]"}], "+", "1", "-", 
+                RowBox[{"F1", "[", "x", "]"}]}], 
+               RowBox[{"2", 
+                RowBox[{"F2", "[", 
+                 RowBox[{"-", "x"}], "]"}]}]], "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"F2", "[", 
+              RowBox[{"-", "x"}], "]"}], " ", ">", " ", "0"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{
+             RowBox[{"F2", "[", 
+              RowBox[{"-", "x"}], "]"}], " ", "\[LessEqual]", " ", "0"}]}], 
+           "}"}]}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"logright", "[", "x_", "]"}], ":=", 
+       RowBox[{"Piecewise", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"n", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", 
+               RowBox[{"F1", "[", "x", "]"}]}], ")"}], 
+             RowBox[{"Log", "[", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"F2", "[", 
+                 RowBox[{"-", "x"}], "]"}], "+", "1", "-", 
+                RowBox[{"F1", "[", "x", "]"}]}], 
+               RowBox[{"2", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  RowBox[{"F1", "[", "x", "]"}]}], ")"}]}]], "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"F1", "[", "x", "]"}], "<", "1"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{
+             RowBox[{"F1", "[", "x", "]"}], "\[GreaterEqual]", "1"}]}], 
+           "}"}]}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"logh", "[", "x_", "]"}], ":=", " ", 
+       RowBox[{
+        RowBox[{"logleft", "[", "x", "]"}], "+", 
+        RowBox[{"logright", "[", "x", "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["2", "n"]}], 
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"logh", "[", "xi", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"xi", ",", "Y"}], "}"}]}], "]"}]}], "]"}], "]"}], ";"}]}],
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", 
+    RowBox[{"Y_", ",", "c_"}], "]"}], ":=", 
+   RowBox[{"Tn", "[", 
+    RowBox[{"Y", "+", "c"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.6710568204575663`*^9, {3.671057027008099*^9, 3.6710570576721888`*^9}, {
+   3.671058048151814*^9, 3.6710580497458687`*^9}, 3.671058085996389*^9, {
+   3.671058123601612*^9, 3.6710581249451447`*^9}, {3.671058195753993*^9, 
+   3.671058230538006*^9}, {3.671118919398849*^9, 3.6711189211086473`*^9}, {
+   3.6711198835449457`*^9, 3.671119883793459*^9}, {3.671121820499447*^9, 
+   3.6711218920832167`*^9}}],
+
+Cell["\<\
+This implementation while is fast to read, works very slow. A much faster \
+implementation would be the following:\
+\>", "Text",
+ CellChangeTimes->{{3.6711199245509567`*^9, 3.671119956006713*^9}, {
+  3.671121764745364*^9, 3.6711218034974537`*^9}, {3.6711219468325853`*^9, 
+  3.6711219852803183`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"TnFast", "[", "Y_", "]"}], ":=", " ", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "n", ",", "n2", ",", "X", ",", "loglik", ",", "i", ",", "kx", ",", 
+       "fnleft", ",", "fnminus", ",", "fnl", ",", "j", ",", "fnm", ",", 
+       "simstat"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"n", " ", "=", " ", 
+       RowBox[{"Length", "[", "Y", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"X", " ", "=", " ", 
+       RowBox[{"Sort", "[", "Y", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"loglik", " ", "=", 
+       RowBox[{"Sum", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"kx", " ", "=", " ", 
+           RowBox[{"Abs", "[", 
+            RowBox[{"X", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"fnleft", " ", "=", " ", 
+           RowBox[{"Count", "[", 
+            RowBox[{"X", ",", " ", 
+             RowBox[{"x_", "/;", 
+              RowBox[{"x", "<", "kx"}]}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"fnminus", " ", "=", " ", 
+           RowBox[{"Count", "[", 
+            RowBox[{"X", ",", " ", 
+             RowBox[{"x_", "/;", 
+              RowBox[{"x", "\[LessEqual]", " ", 
+               RowBox[{"-", "kx"}]}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Piecewise", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"fnminus", "*", 
+                 RowBox[{"Log", "[", 
+                  FractionBox[
+                   RowBox[{"fnminus", "+", "n", "-", "fnleft"}], 
+                   RowBox[{"2", " ", "fnminus"}]], "]"}]}], ",", 
+                RowBox[{"fnminus", ">", "0"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"fnminus", " ", "\[LessEqual]", " ", "0"}]}], "}"}]}],
+              "}"}], "]"}], "+", 
+           RowBox[{"Piecewise", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"n", "-", "fnleft"}], ")"}], "*", 
+                 RowBox[{"Log", "[", 
+                  FractionBox[
+                   RowBox[{"fnminus", "+", "n", "-", "fnleft"}], 
+                   RowBox[{"2", 
+                    RowBox[{"(", 
+                    RowBox[{"n", "-", "fnleft"}], ")"}]}]], "]"}]}], ",", 
+                RowBox[{"fnleft", " ", "<", " ", "n"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"fnleft", " ", "\[GreaterEqual]", " ", "n"}]}], 
+               "}"}]}], "}"}], "]"}]}]}], "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "\[IndentingNewLine]", 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"2", "loglik"}], "n"]}], "]"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TnFast", "[", 
+    RowBox[{"Y_", ",", "c_"}], "]"}], ":=", 
+   RowBox[{"TnFast", "[", 
+    RowBox[{"Y", "-", "c"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.671119961704289*^9, 3.671119971943177*^9}, {
+  3.671120632998056*^9, 3.6711206332130127`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Calculation of the asymptotic distribution of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Chapter",
+ CellChangeTimes->{{3.67112316137785*^9, 3.6711231637944803`*^9}}],
+
+Cell[TextData[{
+ "A straightforward approach to this it\[CloseCurlyQuote]s to calculate the \
+empirical distribution of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "1"], 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"w", "(", "t", ")"}], "2"], "t"], "dt"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", where W denotes a standard Wiener process."
+}], "Text",
+ CellChangeTimes->{{3.671123206643096*^9, 3.671123267898662*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dist", " ", "=", " ", 
+   RowBox[{"ParallelTable", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"data", " ", "=", " ", 
+       RowBox[{"RandomFunction", "[", 
+        RowBox[{
+         RowBox[{"WienerProcess", "[", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "200", ",", "0.01"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"w", " ", "=", " ", 
+       RowBox[{"Interpolation", "[", 
+        RowBox[{
+         RowBox[{"Normal", "[", "data", "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"NIntegrate", "[", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          RowBox[{"w", "[", "t", "]"}], "2"], "t"], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", "1500", "}"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", " ", "=", " ", 
+   RowBox[{"EmpiricalDistribution", "[", "dist", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.671122242783401*^9, 3.6711222440636806`*^9}, {
+   3.671122528659464*^9, 3.671122537379384*^9}, {3.6711231791081657`*^9, 
+   3.671123179415428*^9}, {3.671289893663149*^9, 3.6712898939878807`*^9}, 
+   3.671290365758031*^9}],
+
+Cell["\<\
+With this a confidence interval can be calculated for an \[Alpha] \
+significance level\
+\>", "Text",
+ CellChangeTimes->{{3.6711268931053667`*^9, 3.671126920969293*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Alpha]", " ", "=", " ", "0.01"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Quantile", "[", 
+  RowBox[{"d", ",", 
+   RowBox[{"1", "-", "\[Alpha]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.671122742362103*^9, 3.671122758583709*^9}, {
+  3.6711269242493877`*^9, 3.6711269354333067`*^9}, {3.671127172991231*^9, 
+  3.67112717312604*^9}, {3.671127280638619*^9, 3.6711273178848457`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Quantile", "[", 
+    RowBox[{"d", ",", 
+     RowBox[{"1", "-", "\[Alpha]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Alpha]", ",", "0.001", ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.671290200382594*^9, 3.6712902255285506`*^9}, {
+  3.6712933399148197`*^9, 3.671293342680627*^9}, {3.6712933790253897`*^9, 
+  3.671293419041025*^9}, {3.671293723141757*^9, 3.6712937274476576`*^9}, {
+  3.671293958984049*^9, 3.67129395985441*^9}, {3.6712942472767115`*^9, 
+  3.671294267830691*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Symmetry of stock returns", "Chapter",
+ CellChangeTimes->{{3.671122035560277*^9, 3.671122040095758*^9}}],
+
+Cell[TextData[{
+ "Let us denote by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    SubscriptBox["S", "t"], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " the stock index process and by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["R", "t"], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"log", " ", 
+      SubscriptBox["S", "t"]}], " ", "-", " ", 
+     RowBox[{"log", " ", 
+      SubscriptBox["S", 
+       RowBox[{"t", "-", "\[CapitalDelta]t"}]]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " its returns or logarithmic increments during a certain time interval \
+\[CapitalDelta]t. The \[OpenCurlyDoubleQuote]shifted returns\
+\[CloseCurlyDoubleQuote] are also defined as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["R", "t"], "(", "c", ")"}], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["R", "t"], "-", "c"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", where c denotes a real number. Finally, let us denote by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "n"], "(", "c", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " the value of the test-statistic ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " calculated from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["R", "1"], "(", "c", ")"}], ",", "...", ",", " ", 
+    RowBox[{
+     SubscriptBox["R", "N"], "(", "c", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for a particular value of c. In the following, we will mean by a plausible \
+value of the symmetry point, (for a significance level \[Alpha]) any real \
+number ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["T", "n"], "(", 
+     SubscriptBox["c", "0"], ")"}], " ", "<", " ", 
+    RowBox[{"T", "(", "\[Alpha]", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", where T(\[Alpha]) denotes the \[Alpha]-level upper point of the \
+distribution of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\nUsing a similar approach to that of constructing confidence regions, a \
+plot of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "n"], "(", "c", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " versus c can be used to identify a plausible set of values of ther unknown \
+symmetry point c in the sense that, for a given significance level \[Alpha], \
+the interval would contain the set of all posible values of c which would not \
+lead to the rejection of the null hypotesis of symmetry for the probability \
+distribution of the random variable ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["R", "t"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\n\nIn the following example the returns of the Dow-Jones industrial \
+average will be used to calculate the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["T", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " statistic."
+}], "Text",
+ CellChangeTimes->{{3.671127703292573*^9, 3.67112794168647*^9}, {
+  3.671128128589004*^9, 3.671128288756583*^9}, {3.6711283215717573`*^9, 
+  3.671128354258973*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Load", " ", "data", " ", "of", " ", "the", " ", "close", " ", "prices", 
+    " ", "from", " ", "1978", " ", "to", " ", "2016", " ", "and", " ", 
+    "calculate", " ", "returns"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"djia", " ", "=", " ", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+         "\"\<DJIA_30_10_1978-17_03_2016_Close.dat\>\""}], "]"}], ",", "2"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Returns", "[", 
+      RowBox[{"x_", ",", "lag_"}], "]"}], ":=", " ", 
+     RowBox[{
+      RowBox[{"Log", "[", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "+", "lag"}], ")"}], ";;", 
+          RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "-", 
+      RowBox[{"Log", "[", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ";;", 
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1", "+", "lag"}], ")"}]}]}], "]"}], "]"}], "]"}]}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"djiaret", " ", "=", " ", 
+     RowBox[{"Returns", "[", 
+      RowBox[{"djia", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Calculate", " ", 
+     SubscriptBox["T", "n"], 
+     RowBox[{"(", "c", ")"}], " ", "for", " ", "c", " ", "in", " ", "the", 
+     " ", 
+     RowBox[{"interval", " ", "[", 
+      RowBox[{
+       RowBox[{"-", "0.0010"}], ",", "0.0006"}], "]"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"cmin", " ", "=", " ", 
+     RowBox[{"-", "0.0007"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"cmax", "=", "0.0010"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"deltac", " ", "=", " ", "0.00002"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sim", " ", "=", " ", 
+     RowBox[{"ParallelTable", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"c", ",", 
+         RowBox[{"TnFast", "[", 
+          RowBox[{
+           RowBox[{"djiaret", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ";;", "2000"}], "]"}], "]"}], ",", "c"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"c", ",", "cmin", ",", "cmax", ",", "deltac"}], "}"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"data", " ", "=", " ", 
+     RowBox[{"djiaret", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ";;", "2000"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"se", " ", "=", " ", 
+     FractionBox[
+      RowBox[{"StandardDeviation", "[", "data", "]"}], 
+      SqrtBox[
+       RowBox[{"Length", "[", "data", "]"}]]]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"line1", "=", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "-", 
+           RowBox[{"1.96", "*", "se"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "-", 
+           RowBox[{"1.96", "*", "se"}]}], ",", 
+          RowBox[{"Max", "[", 
+           RowBox[{"sim", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}]}], "}"}]}], "}"}],
+       "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"line2", "=", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "+", 
+           RowBox[{"1.96", "*", "se"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "+", 
+           RowBox[{"1.96", "*", "se"}]}], ",", 
+          RowBox[{"Max", "[", 
+           RowBox[{"sim", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}]}], "}"}]}], "}"}],
+       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Plotting", " ", "functions"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ListLinePlot", "[", 
+      RowBox[{"sim", ",", 
+       RowBox[{"GridLines", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Mean", "[", 
+            RowBox[{"djiaret", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ";;", "2000"}], "]"}], "]"}], "]"}], "}"}], ",", 
+          RowBox[{"{", "}"}]}], "}"}]}], ",", 
+       RowBox[{"Epilog", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"line1", ",", "line2"}], "}"}]}], ",", 
+       RowBox[{"PlotTheme", "\[Rule]", "\"\<Scientific\>\""}], ",", 
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<c\>\"", ",", "\"\<\!\(\*SubscriptBox[\(T\), \(n\)]\)(c)\>\""}], 
+         "}"}]}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", "\"\<\!\(\*SubscriptBox[\(T\), \(n\)]\)\>\"", "}"}]}]}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Quantile", "[", 
+          RowBox[{"d", ",", 
+           RowBox[{"1", "-", 
+            RowBox[{"\[Alpha]", "\[IndentingNewLine]", "0.1"}]}]}], "]"}], 
+         ",", 
+         RowBox[{"Quantile", "[", 
+          RowBox[{"d", ",", 
+           RowBox[{"1", "-", "0.05"}]}], "]"}], ",", 
+         RowBox[{"Quantile", "[", 
+          RowBox[{"d", ",", 
+           RowBox[{"1", "-", "0.01"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "cmin", ",", "cmax"}], "}"}], ",", 
+       RowBox[{"PlotLegends", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<90% CL\>\"", ",", "\"\<95% CL\>\"", ",", "\"\<99% CL\>\""}], 
+         "}"}]}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.671057654206771*^9, 3.671057718226357*^9}, {
+  3.671057826782818*^9, 3.6710578293582478`*^9}, {3.6711283976110687`*^9, 
+  3.671128426482387*^9}, {3.671241593146792*^9, 3.671241672237011*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Export returns", "Subchapter",
+ CellChangeTimes->{{3.671319969367017*^9, 3.6713199703453083`*^9}, {
+  3.6719166076166563`*^9, 3.671916609280044*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"djia", " ", "=", " ", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<DJIA_30_10_1978-17_03_2016_Close.dat\>\""}], "]"}], ",", "2"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Returns", "[", 
+    RowBox[{"x_", ",", "lag_"}], "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"Log", "[", 
+     RowBox[{"x", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "lag"}], ")"}], ";;", 
+        RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "-", 
+    RowBox[{"Log", "[", 
+     RowBox[{"x", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ";;", 
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"1", "+", "lag"}], ")"}]}]}], "]"}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"djiaret", " ", "=", " ", 
+   RowBox[{"Returns", "[", 
+    RowBox[{"djia", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<ret.dat\>\""}], ",", 
+    " ", "djiaret"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.671916620280607*^9, 3.671916625681028*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1536, 781},
+WindowMargins->{{-10, Automatic}, {Automatic, -8}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (February 25, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 250, 9, 103, "Title"],
+Cell[833, 33, 4251, 135, 347, "Text"],
+Cell[5087, 170, 4473, 117, 450, "Input"],
+Cell[9563, 289, 310, 6, 37, "Text"],
+Cell[9876, 297, 3546, 88, 541, "Input"],
+Cell[CellGroupData[{
+Cell[13447, 389, 253, 7, 75, "Chapter"],
+Cell[13703, 398, 500, 14, 56, "Text"],
+Cell[14206, 414, 1379, 35, 263, "Input"],
+Cell[15588, 451, 178, 4, 37, "Text"],
+Cell[15769, 457, 420, 8, 69, "Input"],
+Cell[16192, 467, 612, 13, 39, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16841, 485, 110, 1, 73, "Chapter"],
+Cell[16954, 488, 3356, 98, 240, "Text"],
+Cell[20313, 588, 6408, 178, 762, "Input"],
+Cell[CellGroupData[{
+Cell[26746, 770, 155, 2, 72, "Subchapter"],
+Cell[26904, 774, 1294, 40, 127, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

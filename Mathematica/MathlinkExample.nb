@@ -1,0 +1,269 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      8818,        268]
+NotebookOptionsPosition[      8093,        236]
+NotebookOutlinePosition[      8432,        251]
+CellTagsIndexPosition[      8389,        248]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Load function", "Chapter",
+ CellChangeTimes->{{3.667089334661634*^9, 3.667089343270204*^9}, {
+  3.667089416651297*^9, 3.6670894179790993`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"link", " ", "=", " ", 
+   RowBox[{"Install", "[", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<bin/TnStatisticMathLink\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", 
+    RowBox[{"v_IntegerList", ",", " ", "c_"}], "]"}], ":=", " ", 
+   RowBox[{"Tn", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "v", "]"}], ",", "c"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", 
+    RowBox[{"v_IntegerList", ",", " ", "c_Integer"}], "]"}], ":=", " ", 
+   RowBox[{"Tn", "[", 
+    RowBox[{
+     RowBox[{"N", "[", "v", "]"}], ",", 
+     RowBox[{"N", "[", "c", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", 
+    RowBox[{"v_Real64List", ",", " ", "c_Integer"}], "]"}], ":=", " ", 
+   RowBox[{"Tn", "[", 
+    RowBox[{"v", ",", 
+     RowBox[{"N", "[", "c", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tn", "[", "v_", "]"}], ":=", " ", 
+   RowBox[{"Tn", "[", 
+    RowBox[{"v", ",", " ", "0.0"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.666989334811595*^9, 3.666989341012809*^9}, {
+  3.666989386333004*^9, 3.6669893931405163`*^9}, {3.667081461175516*^9, 
+  3.667081477904211*^9}, {3.66708725691784*^9, 3.667087258069515*^9}, {
+  3.671144907524859*^9, 3.671144907947906*^9}, {3.671145338341753*^9, 
+  3.671145339077692*^9}, {3.671145388773299*^9, 3.671145416124477*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Simple examples", "Chapter",
+ CellChangeTimes->{{3.671145354204227*^9, 3.671145356404237*^9}}],
+
+Cell["Symmetry of a simple list.", "Text",
+ CellChangeTimes->{{3.671145373556159*^9, 3.671145377583581*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Y", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2", ",", "3", ",", "4", 
+     ",", "5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Tn", "[", 
+  RowBox[{"Y", ",", "0"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6711189919128857`*^9, 3.6711189963688498`*^9}, {
+   3.6711449686614103`*^9, 3.671144975068568*^9}, {3.67114508806649*^9, 
+   3.671145098621584*^9}, 3.6711452783528767`*^9, {3.671145380869194*^9, 
+   3.671145381077199*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Symmetry of stock returns", "Chapter",
+ CellChangeTimes->{{3.671145510932228*^9, 3.671145520108227*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Load", " ", "data", " ", "of", " ", "the", " ", "close", " ", "prices", 
+    " ", "from", " ", "1978", " ", "to", " ", "2016", " ", "and", " ", 
+    "calculate", " ", "returns"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"djia", " ", "=", " ", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", 
+        RowBox[{
+         RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+         "\"\<DJIA_30_10_1978-17_03_2016_Close.dat\>\""}], "]"}], ",", "2"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Returns", "[", 
+      RowBox[{"x_", ",", "lag_"}], "]"}], ":=", " ", 
+     RowBox[{
+      RowBox[{"Log", "[", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ";;", 
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"1", "+", "lag"}], ")"}]}]}], "]"}], "]"}], "]"}], "-", 
+      RowBox[{"Log", "[", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "+", "lag"}], ")"}], ";;", 
+          RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"djiaret", " ", "=", " ", 
+     RowBox[{"Returns", "[", 
+      RowBox[{"djia", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sim", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"c", ",", 
+         RowBox[{"Tn", "[", 
+          RowBox[{
+           RowBox[{"djiaret", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ";;", "2000"}], "]"}], "]"}], ",", "c"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"c", ",", 
+         RowBox[{"-", "0.0010"}], ",", "0.0006", ",", "0.00002"}], "}"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"data", " ", "=", " ", 
+     RowBox[{"djiaret", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ";;", "2000"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"se", " ", "=", " ", 
+     FractionBox[
+      RowBox[{"StandardDeviation", "[", "data", "]"}], 
+      SqrtBox[
+       RowBox[{"Length", "[", "data", "]"}]]]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"line1", "=", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "-", 
+           RowBox[{"1.96", "*", "se"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "-", 
+           RowBox[{"1.96", "*", "se"}]}], ",", 
+          RowBox[{"Max", "[", 
+           RowBox[{"sim", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}]}], "}"}]}], "}"}],
+       "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"line2", "=", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "+", 
+           RowBox[{"1.96", "*", "se"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mean", "[", "data", "]"}], "+", 
+           RowBox[{"1.96", "*", "se"}]}], ",", 
+          RowBox[{"Max", "[", 
+           RowBox[{"sim", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}]}], "}"}]}], "}"}],
+       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Plotting", " ", "functions"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{"sim", ",", 
+     RowBox[{"GridLines", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Mean", "[", 
+          RowBox[{"djiaret", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ";;", "2000"}], "]"}], "]"}], "]"}], "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}]}], ",", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"line1", ",", "line2"}], "}"}]}], ",", 
+     RowBox[{"PlotTheme", "\[Rule]", "\"\<Scientific\>\""}], ",", 
+     RowBox[{"FrameLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<c\>\"", ",", "\"\<\!\(\*SubscriptBox[\(T\), \(n\)]\)(c)\>\""}], 
+       "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<\!\(\*SubscriptBox[\(T\), \(n\)]\)\>\"", "}"}]}]}], 
+    "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.671057514506967*^9, 3.6710575195553093`*^9}, {
+  3.671057603287496*^9, 3.671057642239881*^9}, {3.671128359563195*^9, 
+  3.671128392874907*^9}, {3.671145458660823*^9, 3.671145488992263*^9}, {
+  3.67114553587814*^9, 3.671145546735074*^9}, {3.671145586960433*^9, 
+  3.671145590646378*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 836},
+WindowMargins->{{255, Automatic}, {77, Automatic}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (February 25, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 149, 2, 66, "Chapter"],
+Cell[574, 19, 1492, 40, 136, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2103, 64, 100, 1, 66, "Chapter"],
+Cell[2206, 67, 108, 1, 35, "Text"],
+Cell[2317, 70, 622, 15, 61, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2976, 90, 110, 1, 66, "Chapter"],
+Cell[3089, 93, 4988, 140, 673, "Input"]
+}, Open  ]]
+}
+]
+*)
+
