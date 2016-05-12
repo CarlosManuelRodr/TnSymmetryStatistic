@@ -1,6 +1,6 @@
-# Tn Statistic
+# Tn Symmetry Statistic
 
-This code implements the Tn Statistic symmetry test described in *Coronel-Brizio, H.F.; Hernandez-Montoya, A.R.; Rodriguez-Achach, M.E. and R. Huerta-Quintanilla
+This code implements the Tn Symmetry Statistic test described in *Coronel-Brizio, H.F.; Hernandez-Montoya, A.R.; Rodriguez-Achach, M.E. and R. Huerta-Quintanilla
 (2007): Assesing Symmetry of Financial Return Series. Physica A. 383, 5-9.*
 
 If you use this program for academic purposes, please cite as:
@@ -8,7 +8,7 @@ If you use this program for academic purposes, please cite as:
 	C. M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
 
 # Instructions
-Tn Statistic comes with three backends. The command line interface (CLI), a graphical user interface (GUI) and a Mathematica implementation and a separate MathLink for faster performance.
+Tn Symmetry Statistic comes with three backends. The command line interface (CLI), a graphical user interface (GUI) and a Mathematica implementation and a separate MathLink for faster performance.
 
 The instructions for the CLI are the following.
 
