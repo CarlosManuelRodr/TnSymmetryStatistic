@@ -10,15 +10,23 @@ If you use this program for academic purposes, please cite as:
 # Download
 Binaries for Windows can be found [here](https://github.com/CarlosManuelRodr/TnSymmetryStatistic/releases/tag/1.0)
 
-On Linux/UNIX there are no binary releases available. Please clone the repository using
+On Linux/UNIX there are no binary releases available. Clone the repository using
 
 	git clone https://github.com/CarlosManuelRodr/TnSymmetryStatistic
 
-For instructions about how to compile, please refer to the compilation instructions.
+and then compile. For instructions about how to compile, please refer to the compilation instructions.
 
 
 # Instructions
 Tn Symmetry Statistic comes with three backends. The command line interface (CLI), a graphical user interface (GUI) and a Mathematica implementation and a separate MathLink for faster performance.
+
+The GUI provides an easy interface for simple uses
+
+![GUI Screenshot](https://raw.githubusercontent.com/CarlosManuelRodr/TnSymmetryStatistic/master/images/Tn.png)
+
+And it also has an integrated plotter for easy preview of the results
+
+![Plotter Screenshot](https://raw.githubusercontent.com/CarlosManuelRodr/TnSymmetryStatistic/master/images/result.png)
 
 The instructions for the CLI are the following.
 
@@ -37,13 +45,16 @@ The instructions for the CLI are the following.
 	  --out_file=<arg>   Path to the output file.
 	  --help             Show instructions.
 
-For example, to calculate the symmetry for the points (-4, -3, -2, -1, 0, 1, 2 ,3) around zero, the command is:
+For example, to test the symmetry around zero for the points (-4, -3, -2, -1, 0, 1, 2 ,3) , the command is:
 
 	TnStatisticCLI --data=-4,-3,-2,-1,0,1,2,3 --c=0
 
-And to calculate the symmetry from c=-1 to c=1 using steps of size 0.1 the command is:
+And to test the symmetry from c=-1 to c=1 using steps of size 0.1 the command is:
 
 	TnStatisticCLI --data=-4,-3,-2,-1,0,1,2,3 --calc_interval --cmin=-1 --cmax=1, --deltac=0.1
+
+
+
 
 Both the CLI and the GUI accept data from .dat files in which data is structured in columns, for example:
 
@@ -71,7 +82,7 @@ For the command line interface you can compile using
 make
 ```
 
-It requires a C++11 compatible compiler.
+It requires a C++11 compatible compiler (GCC >= 4.8).
 
 On Windows you can use the Visual Studio project file.
 
@@ -80,7 +91,7 @@ The graphical user interface uses the QT toolkit, and it requires the host to ha
 
 	qtbase5-dev
 
-install all the required dependencies. Then you can compile using
+installs all the required dependencies. Then you can compile using
 
 	qmake && make
 
