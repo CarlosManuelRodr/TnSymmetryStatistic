@@ -76,8 +76,13 @@ It requires a C++11 compatible compiler.
 On Windows you can use the Visual Studio project file.
 
 ### GUI
-The graphical user interface uses the QT toolkit, and you can compile directly from QTCreator.
+The graphical user interface uses the QT toolkit, and it requires the host to have installed the development files.  In Ubuntu based distros the package 
 
+	qtbase5-dev
+
+install all the required dependencies. Then you can compile using
+
+	qmake && make
 
 ### Mathematica
 There are two Mathematica compatible implementations. The first is implemented directly in the Wolfram Language on the file *SymmetryTest.nb*. A much faster implementation is made using the MathLink binding.
