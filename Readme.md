@@ -5,7 +5,17 @@ This code implements the Tn Symmetry Statistic test described in *Coronel-Brizio
 
 If you use this program for academic purposes, please cite as:
 
-	C. M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
+	C.M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
+
+# Download
+Binaries for Windows can be found [here](https://github.com/CarlosManuelRodr/TnSymmetryStatistic/releases/tag/1.0)
+
+On Linux/UNIX there are no binary releases available. Please clone the repository using
+
+	git clone https://github.com/CarlosManuelRodr/TnSymmetryStatistic
+
+For instructions about how to compile, please refer to the compilation instructions.
+
 
 # Instructions
 Tn Symmetry Statistic comes with three backends. The command line interface (CLI), a graphical user interface (GUI) and a Mathematica implementation and a separate MathLink for faster performance.
@@ -52,7 +62,7 @@ or .csv files, in which data is separated by commas
 
 
 
-# Compiling
+# Compilation instructions
 
 ### CLI
 For the command line interface you can compile using

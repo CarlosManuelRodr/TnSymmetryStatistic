@@ -81,7 +81,7 @@ int main(int argc, char** argv)
     {
         cout << "Version: " << version << endl;
         cout << "If you use this program for academic purposes, please cite as: \n"
-            "C. M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry "
+            "C.M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry "
             "Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic" << endl;
         return 0;
     }

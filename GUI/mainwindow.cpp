@@ -133,7 +133,7 @@ void MainWindow::on_saveButton_clicked()
 void MainWindow::on_actionAbout_triggered()
 {
     QMessageBox::about(this, "About", "If you use this program for academic purposes, please cite as: \n"
-                                      "C. M. Rodríguez-Martínez, H.F. Coronel-Brizio (2016) Tn Symmetry "
+                                      "C.M. Rodríguez-Martínez, H.F. Coronel-Brizio (2016) Tn Symmetry "
                                       "Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic");
 }
 
