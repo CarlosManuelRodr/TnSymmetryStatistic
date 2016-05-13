@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tn Symmetry Statistic by CarlosManuelRodr</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tn Symmetry Statistic</h1>
+        <p>Distribution-free statistic test.</p>
+
+        <p class="view"><a href="https://github.com/CarlosManuelRodr/TnSymmetryStatistic">View the Project on GitHub <small>CarlosManuelRodr/TnSymmetryStatistic</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/CarlosManuelRodr/TnSymmetryStatistic/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/CarlosManuelRodr/TnSymmetryStatistic/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/CarlosManuelRodr/TnSymmetryStatistic">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="tn-symmetry-statistic" class="anchor" href="#tn-symmetry-statistic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tn Symmetry Statistic</h1>
+
+<p>This code implements the Tn Symmetry Statistic test described in <em>Coronel-Brizio, H.F.; Hernandez-Montoya, A.R.; Rodriguez-Achach, M.E. and R. Huerta-Quintanilla
+(2007): Assesing Symmetry of Financial Return Series. Physica A. 383, 5-9.</em></p>
+
+<p>If you use this program for academic purposes, please cite as:</p>
+
+<pre><code>C.M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
+</code></pre>
+
+<h1>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download</h1>
+
+<p>Binaries for Windows can be found <a href="https://github.com/CarlosManuelRodr/TnSymmetryStatistic/releases/tag/1.0">here</a></p>
+
+<p>On Linux/UNIX there are no binary releases available. Clone the repository using</p>
+
+<pre><code>git clone https://github.com/CarlosManuelRodr/TnSymmetryStatistic
+</code></pre>
+
+<p>and then compile. For instructions about how to compile, please refer to the compilation instructions.</p>
+
+<h1>
+<a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h1>
+
+<p>Tn Symmetry Statistic comes with three backends. The command line interface (CLI), a graphical user interface (GUI) and a Mathematica implementation and a separate MathLink for faster performance.</p>
+
+<p>The GUI provides an easy interface for simple uses</p>
+
+<p><img src="https://raw.githubusercontent.com/CarlosManuelRodr/TnSymmetryStatistic/master/images/Tn.png" alt="GUI Screenshot"></p>
+
+<p>And it also has an integrated plotter for easy preview of the results</p>
+
+<p><img src="https://raw.githubusercontent.com/CarlosManuelRodr/TnSymmetryStatistic/master/images/result.png" alt="Plotter Screenshot"></p>
+
+<p>The instructions for the CLI are the following.</p>
+
+<pre><code>INSTRUCTIONS: TnStatistic [options]
+
+  --data_file=&lt;arg&gt;  Path to file with data.
+  --data=&lt;arg&gt;       Data as a list. E.g: -3,-2,-1,0,1,2.
+  --c=&lt;arg&gt;          Point of symmetry.
+  --alpha=&lt;arg&gt;      Alpha value for upper percentage point calculation. By
+                     default is 0.01, 0.05 and 0.1.
+  --calc_interval    Calculate Tn for an interval of c. Requires to specify
+                     cmin, cmax and deltac.
+  --cmin=&lt;arg&gt;       Minimum value of c. Default value is -1.
+  --cmax=&lt;arg&gt;       Maximum value of c. Default value is 1.
+  --deltac=&lt;arg&gt;     Step interval of c. Default value is 0.01.
+  --out_file=&lt;arg&gt;   Path to the output file.
+  --help             Show instructions.
+</code></pre>
+
+<p>For example, to test the symmetry around zero for the points (-4, -3, -2, -1, 0, 1, 2 ,3) , the command is:</p>
+
+<pre><code>TnStatisticCLI --data=-4,-3,-2,-1,0,1,2,3 --c=0
+</code></pre>
+
+<p>And to test the symmetry from c=-1 to c=1 using steps of size 0.1 the command is:</p>
+
+<pre><code>TnStatisticCLI --data=-4,-3,-2,-1,0,1,2,3 --calc_interval --cmin=-1 --cmax=1, --deltac=0.1
+</code></pre>
+
+<p>Both the CLI and the GUI accept data from .dat files in which data is structured in columns, for example:</p>
+
+<pre><code>-4
+-3
+-2
+-1
+0
+1
+2
+3
+</code></pre>
+
+<p>or .csv files, in which data is separated by commas</p>
+
+<pre><code>-4,-3,-2,-1,0,1,2,3 
+</code></pre>
+
+<h1>
+<a id="compilation-instructions" class="anchor" href="#compilation-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compilation instructions</h1>
+
+<h3>
+<a id="cli" class="anchor" href="#cli" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CLI</h3>
+
+<p>For the command line interface you can compile using</p>
+
+<pre><code>make
+</code></pre>
+
+<p>It requires a C++11 compatible compiler (GCC &gt;= 4.8).</p>
+
+<p>On Windows you can use the Visual Studio project file.</p>
+
+<h3>
+<a id="gui" class="anchor" href="#gui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GUI</h3>
+
+<p>The graphical user interface uses the QT toolkit, and it requires the host to have installed the development files.  In Ubuntu based distros the package </p>
+
+<pre><code>qtbase5-dev
+</code></pre>
+
+<p>installs all the required dependencies. Then you can compile using</p>
+
+<pre><code>qmake &amp;&amp; make
+</code></pre>
+
+<h3>
+<a id="mathematica" class="anchor" href="#mathematica" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mathematica</h3>
+
+<p>There are two Mathematica compatible implementations. The first is implemented directly in the Wolfram Language on the file <em>SymmetryTest.nb</em>. A much faster implementation is made using the MathLink binding.</p>
+
+<p>To compile the Mathlink version you can use the makefile on Linux or the project file on Windows.</p>
+
+<p>Since the neccesary MathLink file may be installed elsewhere on your system, you may need to change the line</p>
+
+<pre><code>MLINKDIR = /opt/Mathematica/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64
+</code></pre>
+
+<p>on the makefile to your Mathematica installation path. On Windows you may need to do the equivalent step but changing the paths on the VS project file.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/CarlosManuelRodr">CarlosManuelRodr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
