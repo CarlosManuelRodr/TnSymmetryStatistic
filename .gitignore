@@ -53,9 +53,11 @@ Temporary Items
 *.synctex.gz
 CLI/.vs/
 CLI/x64/
+CLI/Release/
 build-TnStatisticGUI-Desktop_Qt_5_4_2_MSVC2013_64bit2-Release/
 build-TnStatisticGUI-Desktop_Qt_5_6_0_MSVC2015_64bit-Release/
 build-TnStatisticGUI-Desktop_Qt_5_6_0_MSVC2015_64bit-Debug/
+build-TnStatisticGUI-Desktop_Qt_5_6_0_MSVC2015_32bit-Release/
 deploy/
 Mathematica/.vs/
 Mathematica/x64/
