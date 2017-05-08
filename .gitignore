@@ -62,3 +62,5 @@ deploy/
 Mathematica/.vs/
 Mathematica/x64/
 Mathematica/mathlinktm.cpp
+Mathematica/bin/
+Mathematica/obj/
