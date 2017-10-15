@@ -209,7 +209,7 @@ int main(int argc, char** argv)
     {
         double result;
         if (c == 0)
-            result = tn(data);
+            result = tn_zero(data);
         else
             result = tn(data, c);
         

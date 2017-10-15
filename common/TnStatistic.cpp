@@ -39,7 +39,7 @@ double upper_percentage_point(const double alpha)
     return s(alpha);
 }
 
-double tn(const vector<double> &y)
+double tn_zero(const vector<double> &y)
 {
     unsigned n = (unsigned) y.size();
     double loglik = 0;
@@ -80,7 +80,7 @@ double tn(vector<double> y, const double c)
     for (unsigned i = 0; i < y.size(); ++i)
         y[i] = y[i] - c;
         
-    return tn(y);
+    return tn_zero(y);
 }
 
 vector< Coord<double> > ranged_tn(const std::vector<double> &y, const double cmin, const double cmax, const double deltac)

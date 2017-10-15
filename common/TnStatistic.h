@@ -49,7 +49,7 @@ double standard_deviation(const std::vector<double> &y);
 double standard_error(const std::vector<double> &y);
 double upper_percentage_point(const double alpha);
 
-double tn(const std::vector<double> &y);
+double tn_zero(const std::vector<double> &y);
 double tn(std::vector<double> y, const double c);
 std::vector< Coord<double> > ranged_tn(const std::vector<double> &y, const double cmin, const double cmax, const double deltac);
 
