@@ -1,5 +1,5 @@
 VERSION=10.0
-MLINKDIR = /opt/Mathematica/SystemFiles/Links/WSTP/DeveloperKit/Linux-x86-64
+MLINKDIR = /opt/Mathematica/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64
 SYS = Linux-x86-64
 CADDSDIR = ${MLINKDIR}/CompilerAdditions
 DEFINES = MATHEMATICA
@@ -10,7 +10,7 @@ LIBDIR = ${CADDSDIR}
 OBJDIR = obj
 BINDIR = bin
 
-MPREP = ${CADDSDIR}/wsprep
+MPREP = ${CADDSDIR}/mprep
 RM = rm
 
 CC = /usr/bin/cc
@@ -51,7 +51,7 @@ after_mathematica:
 mathematica : before_mathematica $(BINDIR)/TnStatisticMathLink after_mathematica
 
 $(BINDIR)/TnStatisticMathLink : $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o
-	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o -L${LIBDIR} -lWSTP64i4 -lm -lpthread -lrt -lstdc++ -ldl -luuid -o $@
+	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o -L${LIBDIR} -lML64i4 -lm -lpthread -lrt -lstdc++ -ldl -luuid -o $@
 	
 $(OBJDIR)/mathlinktm.o : $(OBJDIR)/mathlinktm.cpp
 	${CXX} -c ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.cpp -o $@

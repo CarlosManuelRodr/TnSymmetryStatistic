@@ -1,6 +1,6 @@
 #include <vector>
 #include <functional>
-#include "wstp.h"
+#include "mathlink.h"
 #include "../common/TnStatistic.h"
 #include "ThreadPool.h"
 
@@ -29,7 +29,7 @@ void parallel_mathlink_tn(double* v, int nx, int* sizes, int ny, double c)
     for (unsigned i = 0; i < results.size(); ++i)
         result_values.push_back(results[i].get());
 
-    WSPutReal64List(stdlink, result_values.data(), result_values.size());
+    MLPutReal64List(stdlink, result_values.data(), result_values.size());
 }
 
 #if defined(WIN32)
@@ -41,16 +41,16 @@ int __stdcall WinMain(HINSTANCE hinstCurrent, HINSTANCE hinstPrevious, LPSTR lps
     char FAR * argv[32];
     char FAR * FAR * argv_end = argv + 32;
 
-    if (!WSInitializeIcon(hinstCurrent, nCmdShow)) return 1;
-    WSScanString(argv, &argv_end, &lpszCmdLine, &buff_start);
-    return WSMain(argv_end - argv, argv);
+    if (!MLInitializeIcon(hinstCurrent, nCmdShow)) return 1;
+    MLScanString(argv, &argv_end, &lpszCmdLine, &buff_start);
+    return MLMain(argv_end - argv, argv);
 }
 
 #else
 
 int main(int argc, char* argv[])
 {
-    return WSMain(argc, argv);
+    return MLMain(argc, argv);
 }
 
 #endif
