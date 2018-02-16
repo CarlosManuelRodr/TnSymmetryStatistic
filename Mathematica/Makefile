@@ -1,9 +1,17 @@
 VERSION=10.0
+
+OS := $(shell uname)
+ifeq ($(OS),Darwin)
+MLINKDIR = /Applications/Mathematica.app/Contents/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64
+EXTRA_LIBS = -lMLi4 -lc++ -framework Foundation
+else
 MLINKDIR = /opt/Mathematica/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64
-SYS = Linux-x86-64
+EXTRA_LIBS = -lML64i4 -lm -lpthread -lrt -lstdc++ -ldl -luuid
+endif
+
 CADDSDIR = ${MLINKDIR}/CompilerAdditions
 DEFINES = MATHEMATICA
-EXTRA_CFLAGS=-m64 -D ${DEFINES}
+EXTRA_CFLAGS = -std=c++11 -m64 -D ${DEFINES}
 
 INCDIR = ${CADDSDIR}
 LIBDIR = ${CADDSDIR}
@@ -51,7 +59,7 @@ after_mathematica:
 mathematica : before_mathematica $(BINDIR)/TnStatisticMathLink after_mathematica
 
 $(BINDIR)/TnStatisticMathLink : $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o
-	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o -L${LIBDIR} -lML64i4 -lm -lpthread -lrt -lstdc++ -ldl -luuid -o $@
+	${CXX} ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.o $(OBJDIR)/mathlink.o $(OBJDIR)/TnStatistic.o -L${LIBDIR} ${EXTRA_LIBS} -o $@
 	
 $(OBJDIR)/mathlinktm.o : $(OBJDIR)/mathlinktm.cpp
 	${CXX} -c ${EXTRA_CFLAGS} -I${INCDIR} $(OBJDIR)/mathlinktm.cpp -o $@
