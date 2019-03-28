@@ -5,7 +5,7 @@ This code implements the Tn Symmetry Statistic test described in *Coronel-Brizio
 
 If you use this program for academic purposes, please cite as:
 
-	C.M. Rodriguez-Martinez, H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
+	C.M. Rodriguez-Martinez, Hernandez-Montoya, A.R., H.F. Coronel-Brizio (2016) Tn Symmetry Statistic [Computer program]. Available at: http://github.com/CarlosManuelRodr/TnSymmetryStatistic
 
 # Download
 Binaries for Windows can be found [here](https://github.com/CarlosManuelRodr/TnSymmetryStatistic/releases/tag/1.0)
