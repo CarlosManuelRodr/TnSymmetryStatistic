@@ -7,9 +7,7 @@ using namespace std;
 string version = "1.0";
 
 /****************************
-*                           *
 *      Argument parser      *
-*                           *
 ****************************/
 
 struct Arg: public option::Arg
