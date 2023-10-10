@@ -3,9 +3,7 @@
 #include <vector>
 
 /****************************
-*                           *
 *    Coordinate storage     *
-*                           *
 ****************************/
 
 template <class T> class Coord
@@ -39,9 +37,7 @@ template <class T> T Coord<T>::GetY()
 
 
 /****************************
-*                           *
 *        Tn Statistic       *
-*                           *
 ****************************/
 
 double mean(const std::vector<double> &y);
